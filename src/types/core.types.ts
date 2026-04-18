@@ -1,14 +1,16 @@
 interface Options {
-    headers?: object;
-    params?: object;
+    headers?: Record<string, string>;
+    params?: Record<string, string>;
     timeout?: number;
     baseUrl?: string 
 }
 
 interface ClientConf {
     baseUrl: string;
-    headers?: object;
+    headers?: Record<string, string>;
     timeout?: number;
 }
 
-export { Options, ClientConf };
+type RequestMethods = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+
+export { Options, ClientConf, RequestMethods };
