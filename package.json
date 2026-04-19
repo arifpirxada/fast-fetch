@@ -1,15 +1,43 @@
 {
   "name": "fast-fetch",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.ts",
+  "description": "A lightweight Axios-like HTTP client built on fetch",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arifpirxada/fast-fetch"
+  },
+  "homepage": "https://github.com/arifpirxada/fast-fetch#readme",
+  "bugs": {
+    "url": "https://github.com/arifpirxada/fast-fetch/issues"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "http",
+    "client",
+    "fetch",
+    "axios",
+    "request",
+    "api",
+    "rest",
+    "network",
+    "typescript",
+    "lightweight"
+  ],
+  "author": "arifpirxada",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
