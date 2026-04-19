@@ -22,14 +22,28 @@ class FastFetch {
             ...(options?.headers ?? {})
         };
 
+        // Timeout
+
+        const controller = new AbortController();
+        let timeoutId: ReturnType<typeof setTimeout> | undefined;
+        if (!options?.signal && (this.conf.timeout || options?.timeout)) {
+            timeoutId = setTimeout(() => {
+                controller.abort();
+            }, options?.timeout ? options.timeout : this.conf.timeout);
+        }
+
         // Build fetch options
-        const fetchOptions: RequestInit = { method, headers }
+        const fetchOptions: RequestInit = { method, headers, signal: options?.signal ?? controller.signal }
         if (body) fetchOptions.body = JSON.stringify(body);
 
         try {
             const res = await fetch(apiUrl, fetchOptions);
+            timeoutId && clearTimeout(timeoutId);
 
             if (!res.ok) {
+                if (controller.signal.aborted) {
+                    return { data: null, status: 0, error: 'Request timed out' };
+                }
                 return {
                     data: null,
                     status: res.status,
@@ -41,6 +55,12 @@ class FastFetch {
 
             return { data, status: res.status, error: null };
         } catch (e) {
+            timeoutId && clearTimeout(timeoutId);
+
+            if (e instanceof Error && e.name === 'AbortError') {
+                return { data: null, status: 0, error: 'Request timed out' }
+            }
+
             return { data: null, status: 0, error: e instanceof Error ? e.message : String(e) };
         }
     }

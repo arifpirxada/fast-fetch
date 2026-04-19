@@ -2,7 +2,8 @@ interface Options {
     headers?: Record<string, string>;
     params?: Record<string, string>;
     timeout?: number;
-    baseUrl?: string 
+    baseUrl?: string,
+    signal?: AbortSignal
 }
 
 interface ClientConf {
