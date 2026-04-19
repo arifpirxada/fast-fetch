@@ -1,6 +1,6 @@
 {
   "name": "data-dash",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight Axios-like HTTP client built on fetch",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
