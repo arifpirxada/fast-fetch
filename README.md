@@ -1,4 +1,4 @@
-# fast-fetch
+# data-dash
 
 A lightweight, fully-typed, Axios-like HTTP client built natively on the generic `fetch` API.
 
@@ -15,13 +15,13 @@ It gives you the familiar syntax and convenience of Axios, with zero external de
 ## Installation
 
 ```bash
-npm install fast-fetch
+npm install data-dash
 ```
 
 ## Quick Start
 
 ```typescript
-import { createClient } from "fast-fetch";
+import { createClient } from "data-dash";
 
 // 1. Initialize the client
 const client = createClient({

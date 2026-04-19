@@ -5,7 +5,7 @@ export default {
     output: {
         dir: "dist",
         format: 'es',
-        name: "fast-fetch"
+        name: "data-dash"
     },
     plugins: [typescript({ tsconfig: "tsconfig.json" })]
 };

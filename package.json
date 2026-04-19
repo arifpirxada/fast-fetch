@@ -1,5 +1,5 @@
 {
-  "name": "fast-fetch",
+  "name": "data-dash",
   "version": "1.0.0",
   "description": "A lightweight Axios-like HTTP client built on fetch",
   "main": "dist/index.js",
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arifpirxada/fast-fetch"
+    "url": "git+https://github.com/arifpirxada/data-dash.git"
   },
-  "homepage": "https://github.com/arifpirxada/fast-fetch#readme",
+  "homepage": "https://github.com/arifpirxada/data-dash#readme",
   "bugs": {
-    "url": "https://github.com/arifpirxada/fast-fetch/issues"
+    "url": "https://github.com/arifpirxada/data-dash/issues"
   },
   "files": [
     "dist"
